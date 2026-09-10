@@ -1,4 +1,4 @@
-# 3. 🏥 Hospital — Patient Risk Analysis
+# Hospital — Patient Risk Analysis
 
 ### Real-world problem
 

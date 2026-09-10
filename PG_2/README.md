@@ -1,4 +1,4 @@
-# 2. Banking — Fraud Transaction Detection
+# Banking — Fraud Transaction Detection
 
 ### Real-world problem
 
