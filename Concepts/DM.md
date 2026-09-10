@@ -120,17 +120,17 @@ A **new applicant** comes in: Credit Score 765, Income ₹83,000.
 - Features need to be on similar scales (credit score is roughly 300-900, income is in tens of thousands) or one will unfairly dominate the distance calculation — this is why scaling/normalization matters before running k-NN.
 
 ### c) Naive Bayes
-
+ 
 ```mermaid
 flowchart LR
-    Input[Hours studied] --> Formula[Weighted value -><br/>squashed into 0-1<br/>via sigmoid function]
-    Formula --> Prob[Probability of passing]
-    Prob --> Threshold{Probability >= 0.5?}
-    Threshold -->|Yes| Pass[Predict: Pass]
-    Threshold -->|No| Fail[Predict: Fail]
+    Words[Email words:<br/>'free', 'win', 'prize'] --> P1["P(Spam given words)<br/>free: 80%, win: 70%<br/>prize: 75% in past spam"]
+    Words --> P2["P(Not Spam given words)<br/>free: 5%, win: 3%<br/>prize: 2% in past normal mail"]
+    P1 --> Decision{"P(Spam) > P(Not Spam)?"}
+    P2 --> Decision
+    Decision -->|Yes| Spam[Classify: Spam]
+    Decision -->|No| NotSpam[Classify: Not Spam]
 ```
-
-
+ 
 **Example:** Spam filters — the presence of words like "free," "win," "prize" raises the calculated probability that an email is spam. Each word is treated as an independent clue; the probabilities are combined to see whether "Spam" or "Not Spam" ends up more likely.
 
 ### d) Logistic Regression
